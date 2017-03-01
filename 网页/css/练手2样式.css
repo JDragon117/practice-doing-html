@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#container{
+	margin: 0 auto;
+	
+	min-height: 100%;
+	background: url(../src/bg.jpg) no-repeat center top;
+}
+#header{
+	margin: 0 auto;
+	width: 940px;
+}
+.nav a:link,a:visited{
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+	font-size: 14px;
+}
+.nav a:hover{
+	color: red;
+}
+#contain{
+	margin: 0 auto;
+	width: 940px;
+	clear: both;
+}
+.left{
+	float: left;
+	display: inline-block;
+	width: 260px;
+}
+.biaoti3{
+	font-weight: bold;
+	font-size: 14px;
+	color: #fff;
+}
+.left a:link,a:visited{
+	text-decoration: none;
+	color: black;
+	font-size: 12px;
+	vertical-align: baseline;
+}
+.left a:hover{
+	color: red;
+}
+.search{
+	width: auto;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.search label{
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	color: blue;
+	cursor: pointer;
+	line-height: 24px;
+}
+.search input.inp{
+	width: 150px;
+	height: 24px;
+	line-height: 22px;
+	margin: 0 5px;
+	font-size: 12px;
+}
+.search input.sou{
+	display: inline-block;
+	height: 24px;
+	width: 20px;
+	background: url("../src/schbtn.jpg") no-repeat center;
+	overflow: hidden;
+	margin: 0 4px;
+	padding: 5px;
+	border: 0;
+}
+.left select{
+	height: 15px;
+}
+.left select option{
+	height: 15px;
+}
+option{
+	display: block;
+	white-space: pre;
+	font-size: 14px;
+}
+.center{
+    display: inline-block;
+    width: 382px;
+    margin: 0 30px 0 30px;
+}
+.center a:link,a:visited{
+	text-decoration: none;
+	color: black;
+	font-size: 12px;
+	vertical-align: baseline;
+}
+a:hover{
+	color: red;
+}
+.daoshudier{
+	background-color: #E3EAF0;
+	text-align: center;
+}
+.daoshudier img{
+	top: 50%;
+	height: 56px;
+	margin-top: 8px;
+	margin-right: 15px;
+}
+.right{
+	display: inline-block;
+	float: right;
+	width: 238px;
+}
+.gundong{
+	height: 216px;
+	width: 234px;
+	overflow: hidden;
+}
+.gundong ul{
+	margin: 0;
+	padding: 0;
+	height: 217px;
+}
+.gundong li{
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	text-align: center;
+}
+.zi1 a:link,a:visited{
+	font-size: 12px;
+	text-decoration: none;
+	color: black;
+	white-space: nowrap;
+}
+a:hover{
+	color: red;
+}
+#footer{
+	margin: 0 auto;
+	width: 940px;
+	background-color: #4CADFA;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 0.5em;
+}
+.final{
+	color: #fff;
+	font-size: 20px;
+}

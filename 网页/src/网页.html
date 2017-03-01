@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="/html/csstest1.css">
+<style type="text/css">
+div#container{width: 1000px}
+div#header{background-color: #99bbbb;}
+div#menu{background-color: #ffff99;height: 400px;width: 300px;float: left;}
+div#content{background-color: #EEE;height: 400px;width: 700px;float: left;}
+div#footer{background-color: #99b;clear: both;text-align: center;}
+h1{color:red;margin-bottom:0;}
+</style>
+</head>
+<body background="">
+<div id="container">
+<div id="header">
+<h1 align="center">Bleuboo</h1>
+</div>
+<div id="menu">
+<h2>列表：</h2>
+<ul>
+	<li>咖啡</li>
+	<li>茶</li>
+	<li>牛奶</li>
+</ul>
+<form>
+<fieldset>
+<legend>列表</legend>
+姓名：<input type="text" name="name">
+<br/>
+密码：<input type="password" name="password"/>
+<br/>
+自行车：<input type="checkbox" name="bike"><br/>
+汽车：<input type="checkbox" name="car">
+<select name="cars">
+<option value="audi">Audi</option>
+<option value="bmw">BMW</option>
+</select>
+<br/>
+<input type="submit" value="Submit"/>
+</fieldset>
+</form>
+</div>
+<div id="content">
+<p><a name="tips" href="http://www.baidu.com/" target="_blank" style="text-decoration:none">新窗口百度</a></p>
+<p style="color:red;margin-left:20px">第二个段落</p>
+<p><b>This is my first paragraph.</b></p>
+<hr />
+<p><a href="http://www.baidu.com/"><img src="2462ec037afedc32138805cd3ded3a61.jpg" width="120" height="120"></a></p>
+<a href="http://www.baidu.com/" target="_top" style="text-decoration:none">跳出框架百度</a>
+<p>
+这是邮件链接：
+<a href="mailto:1173743797@qq.com?subject=Hello%20again">发送邮件</a></p>
+</div>
+<div id="footer">Copyright bleuboo.com</div>
+</div>
+<p>来自 W3School.com.cn 的图像：
+<img src="http://www.w3school.com.cn/i/w3school_logo_white.gif" /></p>
+<h3>表格</h3>
+<table border="1" cellpadding="20" cellspacing="10" bgcolor="blue" frame="box">
+<caption><b>网站网址</b></caption>
+<tr>
+	<th solspan="2" align="left">百度</th>
+	<td>www.baidu.com</td>
+	<td>www.baidu2.com</td>
+</tr>
+<tr>
+	<th align="left">bleuboo</th>
+	<td align="right">www.bleuboo.com</td>
+	<td></td>
+</tr>
+</table>
+<ol start="10">
+	<li>茶</li>
+	<li>牛奶</li>
+	<li>咖啡</li>
+</ol>
+<iframe src="网页2.html" name="iframe_a" frameborder="1" width="1200"></iframe>
+<p><a href="http://www.baidu.com/" target="iframe_a" style="text-decoration:none">内联百度</a></p>
+<p id="i"></p>
+<button type="button" onclick="myFunction()" value="点这">点这</button>
+<script type="text/javascript">
+	function myFunction(){
+		alert('hhjksdhfpuioa');
+	}
+</script>
+<h1 onclick="this.innerHTML='谢谢'">请点击这文本</h1>
+<script type="text/javascript" src="../js/JavaScript.js"></script>
+</body>
+</html>

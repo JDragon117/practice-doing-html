@@ -1,0 +1,478 @@
+<html>
+<head lang="zh">
+	<meta charset="UTF-8">
+	<title>练手3</title>
+	<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../../css/练手3样式.css">
+	<script type="text/javascript">
+	    window.onload=function(){
+	    	var dajs=document.getElementById('dajs');
+	    	var list=document.getElementById('list');
+	    	var buttons=document.getElementById('buttons').getElementsByTagName('span');
+	    	var prev=document.getElementById('prev');
+	    	var next=document.getElementById('next');
+	    	var index=1;
+	    	var yunxing=false;
+	    	var timer;
+	    	function liang(){
+	    		for (var i = 0; i<buttons.length; i++) {
+	    			if (buttons[i].className=='on') {
+	    				buttons[i].className='';
+	    				break;
+	    			}
+	    		}
+	    		buttons[index-1].className='on';
+	    	}
+	    	function qie(offset){
+	    		var newleft=parseInt(list.style.left)+offset;
+	    		var time=300;
+	    		var interal=10;
+	    		var speed=offset/(time/interal);
+	    		yunxing=true;
+	    		function go(){
+	    			if ((speed<0 && parseInt(list.style.left)>newleft)||(speed>0 && parseInt(list.style.left)<newleft)){
+	    				list.style.left=parseInt(list.style.left)+speed;
+	    				setTimeout(go,interal);
+	    			}
+	    			else{
+	    				yunxing=false;
+	    				list.style.left=newleft+'px';
+	    		        if (newleft < -2880) {
+	    			        list.style.left = -960+'px';
+	    		        }
+	    		        if (newleft > -960) {
+	    			        list.style.left = -2880+'px';
+	    		        }
+	    			}
+	    		}
+	    		go();
+	    	}
+	    	function play(){
+	    		timer=setInterval(function(){
+	    			next.onclick();
+	    		},'3000');
+	    	}
+	    	function stop(){
+	    		clearInterval(timer);
+	    	}
+	    	dajs.onmouseout=play;
+	    	dajs.onmouseover=stop;
+	    	play();
+	    	next.onclick=function(){
+	    		if(index==3){
+	    			index=1;
+	    		}
+	    		else{
+	    			index += 1;
+	    		}
+	    		liang();
+	    		if (!yunxing) {
+	    			qie(-960);
+	    		}	
+	    	}
+	    	prev.onclick=function(){
+	    		if (index==1) {
+	    			index=3;
+	    		}
+	    		else{
+	    			index -= 1;
+	    		}
+	    		liang();
+	    		if (!yunxing) {
+	    			qie(960);
+	    		}
+	    	}
+	    	for(var i=0;i<buttons.length;i++)
+	    	{
+	    		buttons[i].onclick=function(){
+	    			if (this.className=='on') {
+	    				return;
+	    			}
+	    			var myindex=parseInt(this.getAttribute('index'));
+	    			var offset= -960 * (myindex - index);
+	    			if(!yunxing){
+	    				qie(offset);
+	    			}
+	    			index=myindex;
+	    			liang();
+	    		}
+	    	}
+	    }
+	</script>
+</head>
+<body>
+	<div id="header">
+		<div class="logo3a">
+			<div class="logo3">
+				<img src="logo3.png">
+			</div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div class="nav">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">学院概况</a>
+				    <ul>
+				    	<li><a href="#">学院概况</a></li>
+				    	<li><a href="#">学院简介</a></li>
+				    	<li><a href="#">学院简介</a></li>
+				    	<li><a href="#">学院简介</a></li>
+				    </ul>
+				</li>
+				<li><a href="#">学科建设</a></li>
+				<li><a href="#">教学管理</a></li>
+				<li><a href="#">科研学术</a></li>
+				<li><a href="#">实验教学中心</a></li>
+				<li><a href="#">学科竞赛</a></li>
+				<li><a href="#">党群天地</a></li>
+				<li><a href="#">学工之窗</a></li>
+				<li><a href="#">对外交流</a></li>
+				<li><a href="#">信息公开</a></li>
+				<li><a href="#">English Version</a></li>
+			</ul>
+		</div>
+		<div id="dajs">
+			<div id="list" style="left:-960px">
+			    <img src="slide3.jpg">
+				<img src="slide1.jpg">
+				<img src="slide2.jpg">
+				<img src="slide3.jpg">
+				<img src="slide1.jpg">
+			</div>
+			<div id="buttons">
+				<span index="1" class="on"></span>
+				<span index="2"></span>
+				<span index="3"></span>
+			</div>
+			<a href="javascript:;" class="arrow" id="prev">&lt;</a>
+			<a href="javascript:;" class="arrow" id="next">&gt;</a>
+		</div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td height="45px">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="sanlie">
+			<div class="left">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="topline">
+								<img src="top_line.jpg">
+							</td>
+						</tr>
+						<tr>
+							<td height="20px">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td>
+												<p class="zi1">通知通告</p>
+											</td>
+										</tr>
+										<tr>
+											<td height="145px">
+												
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div align="right">
+									<a href="#"><img src="more.gif"></a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="topline">
+								<img src="top_line.jpg">
+							</td>
+						</tr>
+						<tr>
+							<td height="20px">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="zi1">学工之窗</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院召开“三严三实”专题...</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院科学技术协会风采</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院学生会风采</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院分团委风采</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院青年志愿者协会风采</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">寻梦·筑梦·逐梦·圆梦 ——传媒与艺术学...</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">栀子飘香，桃李满园——传媒与艺术学院...</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#" target="_blank">传媒与艺术学院召开“三严三实”专题...</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div align="right">
+									<img src="more.gif">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="right">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+					<tbody>
+						<tr>
+							<td class="topline">
+								<img src="top_line.jpg">
+							</td>
+						</tr>
+						<tr>
+							<td width="100%" height="18"></td>
+						</tr>
+						<tr>
+							<td width="100%" height="225">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="topline">
+								<img src="top_line.jpg">
+							</td>
+						</tr>
+						<tr>
+							<td width="100%" height="18">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h3>友情链接</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<tbody>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#">清华美术学院</a>
+											</td>
+											<td width="12">
+												
+											</td>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#">南京艺术学院</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#">中国传媒大学</a>
+											</td>
+											<td width="12">
+												
+											</td>
+											<td>
+												<img src="arrow.gif">
+											</td>
+											<td class="zi2">
+												<a href="#">江苏大学艺术学院</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="center">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="topline">
+								<img src="top_line.jpg">
+							</td>
+						</tr>
+						<tr>
+							<td height="18">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h3>传媒新闻</h3>
+							</td>
+						</tr>
+						<tr>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">传媒与艺术学院、教育科学与技术学院...</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">我校举办“艺术与人生”专题报告会</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">我校举办“艺术与人生”专题报告会</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">传媒与艺术学院、教育科学与技术学院...</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">传媒与艺术学院、教育科学与技术学院...</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">祖国欢庆，开启征程——传媒与艺术学院...</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">我院王平、张艺教授应邀赴美国纽约展...</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="arrow.gif">
+										</td>
+										<td class="zi2">
+											<a href="#">传媒与艺术学院、教育科学与技术学院...</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</tr>
+						<tr>
+							<td>
+								<div align="right">
+									<img src="more.gif">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="logo4">
+			<img src="logo4.png">
+		</div>
+	</div>
+</body>
+</html>
